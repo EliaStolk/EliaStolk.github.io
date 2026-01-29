@@ -1,0 +1,23 @@
+body {
+height: 100vh;
+margin: 0;
+background: linear-gradient(120deg, #4f8, #48f, #f84);
+background-size: 600% 600%;
+animation: flow 10s ease infinite;
+}
+
+.card {
+    display: block;
+padding: 1.5rem;
+margin: 1rem;
+background: #f2f2f2;
+text-decoration: none;
+color: #000;
+border-radius: 12px;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}

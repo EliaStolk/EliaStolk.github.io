@@ -6,7 +6,7 @@ background-size: 600% 600%;
 animation: flow 10s ease infinite;
 }
 
-.card {
+.nav-card {
     display: block;
 padding: 1.5rem;
 margin: 1rem;
@@ -17,7 +17,7 @@ border-radius: 12px;
 transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover {
+.nav-card:hover {
     transform: translateY(-5px);
 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }

@@ -66,3 +66,19 @@ background: #bbb;
 background: #48f; /* highlight active filter */
 color: white;
 }
+
+.back-btn {
+display: inline-block;
+margin: 1rem 0;
+padding: 0.5rem 1rem;
+background: #48f;
+color: white;
+text-decoration: none;
+border-radius: 8px;
+transition: background 0.2s;
+}
+
+
+.back-btn:hover {
+background: #36c;
+}

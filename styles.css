@@ -16,11 +16,59 @@ header {
 }
 
 .container {
-max-width: 1200px; /* or 1000px, whatever looks good */
-margin: 0 auto; /* centers horizontally */
-padding: 0 2rem; /* optional horizontal padding */
+max-width: 1200px; 
+margin: 0 auto; 
+padding: 0 2rem; 
 }
 
+@keyframes flow {
+0% {
+background-position: 0% 0%;
+}
+50% {
+background-position: 100% 100%;
+}
+100% {
+background-position: 0% 0%;
+}
+}
+
+.sparkle {
+position: fixed;
+width: 4px;
+height: 4px;
+background: yellow;
+border-radius: 50%;
+pointer-events: none; 
+opacity: 0.8;
+will-change: transform, opacity;
+mix-blend-mode: screen; 
+}
+
+footer {
+text-align: center;
+padding: 1.5rem 2rem;
+background: rgba(0,0,0,0.05); /* light translucent background */
+color: #333;
+font-size: 0.9rem;
+border-top: 1px solid #ccc;
+margin-top: 3rem;
+}
+
+
+footer a {
+color: #48f;
+text-decoration: none;
+margin: 0 0.5rem;
+transition: color 0.2s;
+}
+
+
+footer a:hover {
+color: #36c;
+}
+
+/* card styles */
 .nav-card {
     display: block;
 padding: 1.5rem;
@@ -55,6 +103,20 @@ box-sizing: border-box;
 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+}
+
+
+.gallery-grid img {
+width: 100%;
+border-radius: 12px;
+object-fit: cover;
+}
+
+/* filter bar */
 
 .filter-bar {
 margin: 1rem 2rem;
@@ -82,6 +144,7 @@ background: #48f; /* highlight active filter */
 color: white;
 }
 
+/* buttons */
 .back-btn {
 display: inline-block;
 margin: 1rem 0;
@@ -98,49 +161,5 @@ transition: background 0.2s;
 background: #36c;
 }
 
-footer {
-text-align: center;
-padding: 1.5rem 2rem;
-background: rgba(0,0,0,0.05); /* light translucent background */
-color: #333;
-font-size: 0.9rem;
-border-top: 1px solid #ccc;
-margin-top: 3rem;
-}
 
 
-footer a {
-color: #48f;
-text-decoration: none;
-margin: 0 0.5rem;
-transition: color 0.2s;
-}
-
-
-footer a:hover {
-color: #36c;
-}
-
-@keyframes flow {
-0% {
-background-position: 0% 0%;
-}
-50% {
-background-position: 100% 100%;
-}
-100% {
-background-position: 0% 0%;
-}
-}
-
-.sparkle {
-position: fixed;
-width: 4px;
-height: 4px;
-background: yellow;
-border-radius: 50%;
-pointer-events: none; 
-opacity: 0.8;
-will-change: transform, opacity;
-mix-blend-mode: screen; 
-}

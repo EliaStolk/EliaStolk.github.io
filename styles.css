@@ -19,8 +19,8 @@ transition: transform 0.2s, box-shadow 0.2s;
 
 .proj-collection {
     display: grid;
-grid-template-columns: repeat(3, 1fr); /* 5 cards per row */
-gap: 1rem; /* space between cards */
+grid-template-columns: repeat(3, 1fr); 
+gap: 1rem; 
 padding: 2rem;
 }
 
@@ -38,4 +38,31 @@ box-sizing: border-box;
 .card:hover {
     transform: translateY(-5px);
 box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+
+.filter-bar {
+margin: 1rem 2rem;
+}
+
+
+.filter-btn {
+padding: 0.5rem 1rem;
+margin-right: 0.5rem;
+border: none;
+border-radius: 8px;
+background: #ddd;
+cursor: pointer;
+transition: background 0.2s;
+}
+
+
+.filter-btn:hover {
+background: #bbb;
+}
+
+
+.filter-btn.active {
+background: #48f; /* highlight active filter */
+color: white;
 }

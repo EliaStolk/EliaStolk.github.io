@@ -15,6 +15,12 @@ header {
     border-radius: 10px;
 }
 
+.container {
+max-width: 1200px; /* or 1000px, whatever looks good */
+margin: 0 auto; /* centers horizontally */
+padding: 0 2rem; /* optional horizontal padding */
+}
+
 .nav-card {
     display: block;
 padding: 1.5rem;

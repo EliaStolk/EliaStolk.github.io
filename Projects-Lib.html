@@ -13,18 +13,31 @@
     <p>My projects</p>
 </header>
 <main>
-    <a class="nav-card" href="Project Pages/Brushless-DC-Motor.html">
+    <div class="filter-bar">
+<button class="filter-btn" data-filter="all">All</button>
+<button class="filter-btn" data-filter="RF">RF</button>
+<button class="filter-btn" data-filter="Embedded">Embedded Systems</button>
+<button class="filter-btn" data-filter="Data">Data Analysis</button>
+<button class="filter-btn" data-filter="analog">Analog Electronics</button>
+</div>
+    <section class="proj-collection">
+    <a class="proj-card card"  data-category="analog" href="Project Pages/Brushless-DC-Motor.html">
 <h2>Brushless DC Motor</h2>
 <p>Workshop Tings</p>
 </a>
-<a class="nav-card" href="Project Pages/Crystal-Radio.html">
-<h2>Crystal Radio</h2>
+<a class="proj-card card" data-category="analog RF" href="Project Pages/Crystal-Radio.html">
+<h2>Crystal Radio (WIP)</h2>
 <p>RF Tings</p>
 </a>
-<a class="nav-card" href="Project Pages/Stellar-Clusters-Photometery.html">
-<h2>Stellar Clusters Photometry</h2>
+<a class="proj-card card" data-category="Data" href="Project Pages/Stellar-Clusters-Photometery.html">
+<h2>Stellar Cluster Photometry</h2>
 <p>Data Analysis Tings</p>
 </a>
+<a class="proj-card card" data-category="Embedded analog" href="Project Pages/Smart-Energy-Monitor.html">
+<h2>Smart Energy Monitor (WIP)</h2>
+<p>Uni project Tings</p>
+</a>
+</section>
 </main>
 </body>
 </html>

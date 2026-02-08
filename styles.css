@@ -9,15 +9,50 @@
     justify-content: space-between;
 }
 
-.header-text {
+.header-container {
     text-align: center;
+    font-size: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.header-container img {
+    width: 100%;
+    display: block;
+    
+}
+
+.header-container h1, .header-container h2 {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.header-container h2 {
+    top: 55%;
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.6), transparent);
 }
 
 .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 5% 20%;
+    padding: 2% 20%;
+    background-color: blueviolet;
+    margin: 0%;
 }
 
 #copyright {

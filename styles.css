@@ -9,9 +9,7 @@ body {
     font-size: 1.5rem;
 }
 
-.text-content {
 
-}
 
 
 
@@ -62,6 +60,21 @@ body {
 
 .header-container h2 {
     top: 50%;
+}
+
+/* Project card styles*/
+
+.project-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 5%;
+}
+
+.project-card {
+    border: 1px solid black;
+    padding: 20px;
+    text-align: center;
 }
 
 /* Nav-bar styles */

@@ -62,6 +62,20 @@ body {
     top: 50%;
 }
 
+/* Filter bar styles*/
+
+#filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.filter-btn {
+    border-radius: 14px;
+    padding: 0.8%;
+}
+
 /* Project card styles*/
 
 .project-card-container {
@@ -75,6 +89,7 @@ body {
     border: 1px solid black;
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
 }
 
 /* Nav-bar styles */

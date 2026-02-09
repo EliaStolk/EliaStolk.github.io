@@ -108,6 +108,14 @@ background-color: rgb(2, 146, 45);;
     text-align: center;
     border-radius: 10px;
     text-decoration: none;
+    transition: opacity 0.5s ease-in-out;
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    background-size: cover; 
+}
+
+#sol-card {
+    background: url("../assets/laserworld-laserbeam-LlQy3Id5XXM-unsplash.jpeg");
 }
 
 /* Nav-bar styles */

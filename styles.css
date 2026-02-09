@@ -36,6 +36,14 @@ body {
     background-image: radial-gradient(circle, rgba(0,0,0,0.7), transparent), url("/assets/umberto-jXd2FSvcRr8-unsplash-cropped1.jpg");
 }
 
+#project-lib-header {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.7), transparent), url("/assets/vishnu-mohanan-vtg8tAdoWVQ-unsplash-cropped1.jpg");
+}
+
+#education-header {
+    background-image: radial-gradient(circle, rgba(0,0,0,0.7), transparent), url("/assets/vitaly-gariev-CW2ieLii3DU-unsplash-cropped1.jpg");
+}
+
 .header-container img {
     width: 100%;
     display: block;

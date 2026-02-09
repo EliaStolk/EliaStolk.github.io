@@ -17,8 +17,24 @@
                     <li><a href="education.html" class="nav-link">Education</a></li>
                 </ul>
             </nav>
-            <h1 class="header-text">Project Library</h1>
+            <div class="header-container" id="project-lib-header">
+            <h1>Project Library</h1>
+            </div>
         </header>
+        <section class="page-content">
+            <div id="filter-container">
+                <button class="filter-btn" onclick="filerSelection('all')">All Projects</button>
+                <button class="filter-btn" onclick="filerSelection('all')">RF / Communication</button>
+                <button class="filter-btn" onclick="filerSelection('all')">Electronics & Analog Design</button>
+                <button class="filter-btn" onclick="filerSelection('all')">Embedded Systems</button>
+                <button class="filter-btn" onclick="filerSelection('all')">Data Analysis</button>
+                <button class="filter-btn" onclick="filerSelection('all')">Web & Visualization</button>
+                
+            </div>
+            <section class="project-card-container">
+                <div class="project-card"></div>
+            </section>
+        </section>
     </main>
     <footer>
         <ul class="contact-info">

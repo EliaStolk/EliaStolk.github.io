@@ -74,13 +74,29 @@ body {
 .filter-btn {
     border-radius: 14px;
     padding: 0.8%;
+    background-color: rgb(207, 166, 235);
+    border-color:rgb(132, 6, 216);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-btn:hover {
+    cursor: pointer;
+    background-color: rgb(132, 6, 216);
+}
+
+#all-btn {
+    background-color: rgb(3, 255, 100);
+    border-color:rgb(2, 146, 45);
+}
+
+#all-btn:hover {
+background-color: rgb(2, 146, 45);;
 }
 
 /* Project card styles*/
 
 .project-card-container {
     display: grid;
-    
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 5%;
@@ -91,6 +107,7 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 10px;
+    text-decoration: none;
 }
 
 /* Nav-bar styles */
@@ -110,12 +127,8 @@ body {
 .nav-link {
     display: block;
     transition: transform 0.4s ease;
-}
-
-.nav-link:link, .nav-link:visited {
     text-decoration: none;
     color: white;
-
 }
 
 .nav-link:hover {

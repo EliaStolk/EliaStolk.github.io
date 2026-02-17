@@ -17,7 +17,7 @@ body {
 
 .header-container {
     text-align: center;
-    font-size: 3.5vw;
+    font-size: 2vw;
     position: relative;
     width: 100%;
     background-size: cover;
@@ -67,9 +67,8 @@ body {
 #filter-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     gap: 0.5rem;
-    justify-content: center;
+    justify-content: space-between;
 
 }
 
@@ -125,7 +124,7 @@ background-color: rgb(2, 146, 45);;
 /* Nav-bar styles */
 
 .nav-bar {
-    font-size: 3vw;
+    font-size: 1.5vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -182,28 +181,28 @@ background-color: rgb(2, 146, 45);;
     margin: 0%;
 }
 
-/* Phone styles
-@media (max-width: 768px) {
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  .nav-bar {
-    font-size : 1rem;
-    padding: 1.5% 10%;
-  }
-
-}*/
 
 /* tablet */
 @media (max-width: 900px) {
   .project-card-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-container {
+    font-size: 3vw;
+  }
+
+  .nav-bar {
+    font-size: 2vw;
+  }
+
+  .page-content {
+    padding: 1% 7%;
+  }
+
+  #filter-container {
+    font-size: 2vw;
+    justify-content: center;
   }
 }
 
@@ -212,4 +211,6 @@ background-color: rgb(2, 146, 45);;
   .project-card-container {
     grid-template-columns: 1fr;
   }
+
+  
 }

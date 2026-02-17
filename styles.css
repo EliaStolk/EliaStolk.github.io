@@ -17,7 +17,7 @@ body {
 
 .header-container {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3.5vw;
     position: relative;
     width: 100%;
     background-size: cover;
@@ -67,7 +67,9 @@ body {
 #filter-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
 
 }
 
@@ -77,6 +79,7 @@ body {
     background-color: rgb(207, 166, 235);
     border-color:rgb(132, 6, 216);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1vw;
 }
 
 .filter-btn:hover {
@@ -98,7 +101,7 @@ background-color: rgb(2, 146, 45);;
 .project-card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 1.5vw;
     margin: 5%;
 }
 
@@ -109,9 +112,10 @@ background-color: rgb(2, 146, 45);;
     border-radius: 10px;
     text-decoration: none;
     transition: opacity 0.5s ease-in-out;
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    background-position: center; /* Center the image */
+    background-repeat: no-repeat; 
+    background-position: center; 
     background-size: cover; 
+    font-size: 2.5vw;
 }
 
 #sol-card {
@@ -121,7 +125,7 @@ background-color: rgb(2, 146, 45);;
 /* Nav-bar styles */
 
 .nav-bar {
-    font-size: 1.3rem;
+    font-size: 3vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -178,13 +182,8 @@ background-color: rgb(2, 146, 45);;
     margin: 0%;
 }
 
+/* Phone styles
 @media (max-width: 768px) {
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
 
   h1 {
     font-size: 1.8rem;
@@ -194,4 +193,23 @@ background-color: rgb(2, 146, 45);;
     font-size: 1.3rem;
   }
 
+  .nav-bar {
+    font-size : 1rem;
+    padding: 1.5% 10%;
+  }
+
+}*/
+
+/* tablet */
+@media (max-width: 900px) {
+  .project-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* phone */
+@media (max-width: 600px) {
+  .project-card-container {
+    grid-template-columns: 1fr;
+  }
 }

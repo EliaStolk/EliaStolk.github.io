@@ -20,6 +20,40 @@
             </nav>
             <section class="page-content">
             <h1 class="header-text">Smart Energy Monitor</h1>
+            <div class="role-tags">
+                    <span class="tag">LTSpice Simulation</span>
+                    <span class="tag">Analogue Electronics</span>
+                    <span class="tag">Embedded Systems</span>
+                    <span class="tag">ATmega328P</span>
+            </div>
+            <p>This project involved the design and implementation of an AC energy monitor capable of measuring and displaying the voltage, current, average power, and energy consumed by an inductive AC load. The system used a custom analogue signal conditioning front end to sense voltage and current, which were sampled by a microcontroller to compute all four quantities and display them sequentially on a 4-digit 7-segment display. The project was completed as part of ELECTENG 209, where the team entered the Smart Energy Challenge, an extended version of the project requiring a custom SMT PCB design.
+            </p>
+            <hr>
+
+            <h2>System Overview</h2>
+            <p>The system was divided into two major subsystems:</p>
+
+            <h3>Analogue Front End</h3>
+            <p>Current was sensed using a shunt resistor formed from four 1Ω resistors in parallel, giving 0.25Ω. This value was selected to keep power dissipation within the resistors' combined rating across the full expected current range while still producing a measurable voltage drop.<br><br>
+            To improve measurement accuracy at low load conditions, two separate current sensing amplifier channels were implemented using LM324 op-amps. The standard current channel used a differential amplifier with a gain of 4.7, while a dedicated low current channel used a higher gain of 10 to improve SNR when load current was small. Before each measurement cycle, the microcontroller performed a test sample to estimate the RMS current. If this fell below 0.2828A, a low current flag was set and subsequent samples were taken from the low current channel instead.<br><br>
+            Source voltage was measured using a resistive divider with a ratio of 27/560, chosen to bring the maximum source voltage down to approximately 2Vpp at the ADC input. Both the voltage and current signals were passed through LM324-based differential amplifiers to level-shift them into the 0–5V range required by the ADC, with a DC offset of 2.1V applied via the non-inverting input. First-order RC low-pass filters with R = 1kΩ and C = 15nF, giving a cutoff frequency of approximately 10kHz, were placed after each amplifier to attenuate high-frequency noise before the signals reached the ADC.</p>
+            <h3>Microcontroller</h3>
+            <p>An ATmega328PB sampled both conditioned signals via its ADC, triggered at 120μs intervals by a Timer0 compare match interrupt. The single ADC meant voltage and current could not be sampled simultaneously, introducing a fixed time offset between the two signals. Rather than using external hardware comparators to measure the zero-crossing phase difference, which would have simplified the power calculation significantly, the team opted to use only the internal analogue comparator to keep board space and component count low.<br><br>
+             To account for the sampling offset, both the voltage and current sample arrays were linearly interpolated to produce a denser set of data points. This upsampled representation allowed the current signal to be shifted by a fractional index to align it with the voltage signal, enabling accurate instantaneous power calculation via a sum-of-products approach over 100 aligned sample pairs. DC offset was removed from both signals before computation.<br><br>
+             The microcontroller cycled through four states sequentially: sampling, power calculation, display update, and idle. During the sampling phase the ADC auto-trigger and comparator interrupt were active. Once sampling completed, these were disabled and the power calculation was performed. Computed values of voltage, current, power, and energy were then displayed one at a time on the 7-segment display with a delay between each. Energy was accumulated between cycles using Timer1 to measure elapsed time.<br><br>
+             The 7-segment display was driven through a 74HC595 shift register using bit-banged serial output, with the four digits multiplexed and refreshed every 10ms via a separate timer interrupt.</p>
+             <h3>PCB Design</h3>
+             <p>As part of the Smart Energy Challenge, the team designed a custom SMT PCB. Responsibilities included creating component schematics and sourcing footprints for parts without existing library entries, producing the full circuit schematic, and collaborating on board layout and routing.</p>
+             <hr>
+
+             <h2>Debugging & Issues</h2>
+             <p>Two hardware issues were identified and resolved during development.
+             The first was that the conditioned voltage signal appeared clipped into a near-square wave. Investigating the signal chain revealed that one resistor in the voltage divider was off by a factor of 10. This caused the divided signal to be far larger than intended, exceeding the LM324's output swing and saturating the amplifier. Correcting the resistor value brought the signal back to the expected 2Vpp with the correct waveform shape.<br><br>
+             The second issue arose during SMT PCB bring-up. The ATmega328PB has two SPI peripherals, and the programming pins on the PCB footprint corresponded to the SPI1 interface rather than SPI0, which the programmer required. The bootloader could not be flashed through the intended route. The workaround came from the observation that the required SPI0 MOSI pin was also shared with the UART1 TX line, which was accessible on the board. A wire was added to bridge this connection, allowing the bootloader to be successfully programmed.</p>
+             <hr>
+
+             <h2>Results & Limitations</h2>
+             <p>The design functioned correctly in Proteus simulation, with the 7-segment display correctly cycling through voltage, current, power, and energy values. After initial calibration the computed values were accurate in simulation. On the physical SMT prototype the display operated but readings were inaccurate and did not respond to changes in load. This was identified as a consequence of a clock speed mismatch, the PCB ran at the microcontroller's default clock frequency rather than the 2MHz assumed throughout the firmware, causing ADC sampling intervals and all timing-dependent functions to operate incorrectly. Resolving the clock configuration would be the necessary first step before diagnosing any further hardware issues.</p>
             </section>
         </header>
     </main>

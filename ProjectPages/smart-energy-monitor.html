@@ -41,7 +41,7 @@
             <p>An ATmega328PB sampled both conditioned signals via its ADC, triggered at 120μs intervals by a Timer0 compare match interrupt. The single ADC meant voltage and current could not be sampled simultaneously, introducing a fixed time offset between the two signals. Rather than using external hardware comparators to measure the zero-crossing phase difference, which would have simplified the power calculation significantly, the team opted to use only the internal analogue comparator to keep board space and component count low.<br><br>
              To account for the sampling offset, both the voltage and current sample arrays were linearly interpolated to produce a denser set of data points. This upsampled representation allowed the current signal to be shifted by a fractional index to align it with the voltage signal, enabling accurate instantaneous power calculation via a sum-of-products approach over 100 aligned sample pairs. DC offset was removed from both signals before computation.<br><br>
              The microcontroller cycled through four states sequentially: sampling, power calculation, display update, and idle. During the sampling phase the ADC auto-trigger and comparator interrupt were active. Once sampling completed, these were disabled and the power calculation was performed. Computed values of voltage, current, power, and energy were then displayed one at a time on the 7-segment display with a delay between each. Energy was accumulated between cycles using Timer1 to measure elapsed time.<br><br>
-             The 7-segment display was driven through a 74HC595 shift register using bit-banged serial output, with the four digits multiplexed and refreshed every 10ms via a separate timer interrupt.</p>
+             The 7-segment display was driven through a 74HC595 shift register with data clocked out serially in software., with the four digits multiplexed and refreshed every 10ms via a separate timer interrupt.</p>
              <h3>PCB Design</h3>
              <p>As part of the Smart Energy Challenge, the team designed a custom SMT PCB. Responsibilities included creating component schematics and sourcing footprints for parts without existing library entries, producing the full circuit schematic, and collaborating on board layout and routing.</p>
              <hr>
@@ -54,6 +54,12 @@
 
              <h2>Results & Limitations</h2>
              <p>The design functioned correctly in Proteus simulation, with the 7-segment display correctly cycling through voltage, current, power, and energy values. After initial calibration the computed values were accurate in simulation. On the physical SMT prototype the display operated but readings were inaccurate and did not respond to changes in load. This was identified as a consequence of a clock speed mismatch, the PCB ran at the microcontroller's default clock frequency rather than the 2MHz assumed throughout the firmware, causing ADC sampling intervals and all timing-dependent functions to operate incorrectly. Resolving the clock configuration would be the necessary first step before diagnosing any further hardware issues.</p>
+             <hr>
+
+             <h2>Additional Resources</h2>
+             <p>For readers interested in the firmware implementation, analogue design files, and circuit schematics, the source files are available in the GitHub repository below</p>
+             <a href="https://github.com/EliaStolk/Smart-Energy-Monitor" 
+             target="_blank">View GitHub Repository →</a>
             </section>
         </header>
     </main>

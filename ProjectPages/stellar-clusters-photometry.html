@@ -20,6 +20,55 @@
             </nav>
             <section class="page-content">
             <h1 class="header-text">Stellar Clusters Photometry</h1>
+            <div class="role-tags">
+                    <span class="tag">Stellar Photometry</span>
+                    <span class="tag">Colour-Magnitude Diagrams</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Scientific Reporting</span>
+            </div>
+            <p>This experiment aimed to determine the age and distance of two stellar clusters, open cluster M36 and globular cluster M3, using photometric observations taken through remote ground-based telescopes. The experiment was completed as part of PHYS 201 at the University of Auckland with a lab partner.</p>
+            <hr>
+
+            <h2>Method</h2>
+            <p>Remote telescopes (PIRATE and COAST) were operated via the Abot control interface to image each cluster in two spectral bands, the visual (V) and blue (B) bands, across four exposure times of 8, 15, 30, and 60 seconds each repeated five times. A reference star of known apparent magnitude was selected for each cluster from the VizieR ASCC catalog to account for atmospheric and equipment variation during photometry.<br><br>
+            Raw FITS images were calibrated, aligned, and analyzed using AstroImageJ with multi-aperture photometry, selecting 80-150 stars per cluster alongside the reference star. The relative fluxes were then processed in Python to recover apparent magnitudes via:<br><br>
+            m₁ - m₂ = -2.5 log₁₀(F₁/F₂)<br><br>
+            The observed colour per star was computed as the B band magnitude minus the V band magnitude, then corrected for interstellar reddening using a known colour excess E(B-V) of 0.22 for M36 and 0.01 for M3. Intrinsic colours were averaged across exposure times to give one value per star.<br><br>
+            Distance was determined by locating the apparent V band magnitude of an A0 star (intrinsic colour of zero, absolute magnitude 0.7) and applying the distance modulus:<br><br>
+            μV = 5 log₁₀(d/pc) - 5 + AV<br><br>
+            Cluster age was estimated by overlaying the colour-magnitude diagram against a set of provided isochrones and selecting the best fit.</p>
+            <hr>
+
+            <h2>Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cluster</th>
+                        <th>Distance (parsecs)</th>
+                        <th>Age (years)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M36</td>
+                        <td>1553 ± 34</td>
+                        <td>3.16 × 10⁷</td>
+                    </tr>
+                    <tr>
+                        <td>M3</td>
+                        <td>123,027</td>
+                        <td>~10⁹</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>The M36 distance of 1553 pc is somewhat above the accepted value of around 1330 pc and outside the error range, likely due to the absence of A0 stars in the measured data requiring an extrapolated line of best fit to estimate the A0 magnitude. The M36 age estimate of 31.6 million years compares reasonably to the accepted value of around 22 million years, with the primary source of error being the limited resolution of the provided isochrones and the subjective nature of visual fitting.<br><br>
+            For M3, the initial photometry data proved unusable as it captured predominantly red giants rather than main sequence stars, a known limitation for distant globular clusters where faint low-mass stars fall below detection thresholds. The analysis was redone using an online dataset from the VizieR J/A+A/290/69 catalog, yielding a distance of 123,027 pc against an accepted value of around 10,000 pc. The age estimate of 1 Gyr falls short of the accepted value of roughly 11.4 Gyr. Both M3 results reflect the difficulty of isochrone fitting given the unusual shape of the globular cluster colour-magnitude diagram and the data's dominance by the horizontal branch rather than the full main sequence turnoff.</p>
+            <hr>
+
+            <h2>Additional Resources</h2>
+            <p>The full experimental report including colour-magnitude diagrams, isochrone overlays, and Python analysis is available below.</p>
+            <a href="../assets/Files/[Stolk-Elia]Physics_201-Experiment_2-Report.pdf" class="report-link" target="_blank">View Full Report</a>
+
             </section>
         </header>
     </main>

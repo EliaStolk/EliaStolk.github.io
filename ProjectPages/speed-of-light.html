@@ -30,7 +30,27 @@
             <hr>
 
             <h2>Method</h2>
-            <p></p>
+            <p>A function generator was used to drive a laser with a 300kHz square wave signal, with the same signal connected to channel 1 of an oscilloscope. A photodiode with a built-in 30dB amplifier detected the laser output and was connected to channel 2. By varying the distance the laser had to travel and measuring the corresponding change in time delay between the two oscilloscope channels, the speed of light could be calculated from:<br><br>
+            s = Δd / Δt<br><br>
+            Rather than measuring absolute time delay, the experiment measured the change in delay across different distances. This was a deliberate methodological choice: any fixed equipment delays in the signal chain cancel out entirely when differences are taken, leaving only the contribution from the additional light travel time. This approach also allowed the clearest reference points on the waveform to be used regardless of their absolute timing, reducing human error in reading the oscilloscope.<br><br>
+            Data was collected across three sets of measurements at distances of 0.1m, 0.6m, 1.1m, 1.6m, and 2.1m. The 0.1m data point was later excluded from each set due to inconsistency, with 0.6m used as the reference distance instead. A line of best fit was fitted to each processed dataset using MATLAB's polyfit function, with the gradient giving the measured speed. Error was determined by finding the steepest and flattest worst-fit lines and taking half their difference.</p>
+            <hr>
+
+            <h2>Results</h2>
+            <p>The measured speed of light across the three datasets was:</p>
+            <ul>
+                <li>Data Set 1: (1.9 ± 7.8) × 10⁸ m/s</li>
+                <li>Data Set 2: (3.1 ± 2.3) × 10⁸ m/s</li>
+                <li>Data Set 3: (3.1 ± 2.1) × 10⁸ m/s</li>
+            </ul>
+            <p>Giving a final average of (2.7 ± 8.1) × 10⁸ m/s.<br><br>
+            The central value is close to and of the same order of magnitude as the accepted value. However the uncertainty is large, with the range for Data Set 1 extending into physically meaningless negative values. The primary sources of error were the difficulty in consistently identifying the reference point on the photodiode waveform at the nanosecond scale, the small number of data points per dataset, and the small distance differences meaning uncertainties were a significant percentage of the measured time differences. These factors compounded heavily during error propagation.<br><br>
+            Excluding Data Set 1 gives a more sensible result of (3.1 ± 2.2) × 10⁸ m/s, though this was noted as a potential concern for data selection bias.</p>
+            <hr>
+
+            <h2>Additional Resources</h2>
+            <p>The full experimental report including raw data tables, processed data, and MATLAB plots is available below.</p>
+            <a href="../assets/Files/[Stolk-Elia]Physics_201-Experiment_1-Report.pdf" class="report-link" target="_blank">View Full Report</a>
             </section>
         </header>
     </main>

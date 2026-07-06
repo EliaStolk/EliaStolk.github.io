@@ -5,9 +5,13 @@ body {
     color: #374151;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .page-content {
     background-color: #ffffff;
-    padding: 1% 18%;
+    padding: 1% 7%;
     margin: 1%;
     font-size: 1.5rem;
 }
@@ -291,41 +295,6 @@ background-color: rgb(2, 146, 45);;
     opacity: 0.7;
 }
 
-@media (max-width: 768px) {
-    .contact-info {
-        padding: 3% 8%;
-    }
-
-    .contact-icon {
-        width: 36px;
-        height: 36px;
-    }
-
-    .circuit-box {
-        margin: 0 12px;
-    }
-
-    .footer-circuit {
-        max-height: 56px;
-        opacity: 0.4;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-info {
-        padding: 4% 6%;
-    }
-
-    .contact-icon {
-        width: 30px;
-        height: 30px;
-    }
-
-    .circuit-box {
-        display: none; /* only the circuit graphic hides, icons stay */
-    }
-}
-
 
 
 #copyright {
@@ -407,14 +376,135 @@ li {
   #filter-container {
     font-size: 2vw;
     justify-content: center;
+    gap: 1rem;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .skill {
+    grid-template-columns: 180px 1fr;   /* shrink label column instead of full stack */
+    gap: 8px;
+  }
+
+  .skill-label,
+  .catagory-label {
+    width: 180px;
+    font-size: 0.9rem;
+  }
+
+  .skill-level {
+    font-size: 0.85rem;
+    margin-left: 10px;
+  }
+
+  .contact-info {
+        padding: 3% 8%;
+    }
+
+    .contact-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .circuit-box {
+        margin: 0 12px;
+    }
+
+    .footer-circuit {
+        max-height: 56px;
+        opacity: 0.4;
+    }
+
+    .main-image-container {
+    flex-wrap: wrap;
+  }
+
+  .main-image-figure {
+    height: 220px;
   }
 }
 
 /* phone */
 @media (max-width: 600px) {
+
+    .main-image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-image-figure {
+    height: auto;
+    max-width: 90%;
+  }
+
+  .main-image-figure .main-image {
+    height: auto;
+    width: 100%;
+    max-height: 260px;
+  }
+  
   .project-card-container {
     grid-template-columns: 1fr;
   }
+
+  .page-content {
+    font-size: 1rem;
+    padding: 4% 5%;
+  }
+
+  .skill {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .skill-label,
+  .catagory-label {
+    width: 100%;
+  }
+
+  .skill-level {
+    font-size: 0.7rem;
+    margin-left: 0;
+  }
+
+  .skill-level li {
+    margin-bottom: 0;
+  }
+
+  #filter-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    padding: 12px 4%;
+  }
+
+  .filter-btn {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    border-radius: 14px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #all-btn {
+    grid-column: 1 / -1;   /* make "All" span the full row width on its own line */
+  }
+
+  .contact-info {
+        padding: 4% 6%;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .circuit-box {
+        display: none; /* only the circuit graphic hides, icons stay */
+    }
 
   
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Modern Lighting Design (AS/NZS 1680 Compliance)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../resume.html" class="nav-link">Resume</a></li>
+                    <li><a href="../project-lib.html" class="nav-link">Project Library</a></li>
+                    <!--<li><a href="education.html" class="nav-link">Education</a></li>-->
+                </ul>
+            </nav>
+
+            <section class="page-content">
+                <h1 class="header-text">Modern Lighting Design: AS/NZS 1680 Compliance Redesign</h1>
+                <div class="role-tags">
+                    <span class="tag">DIALux Evo</span>
+                    <span class="tag">AS/NZS 1680 Compliance</span>
+                    <span class="tag">Lighting Design</span>
+                    <span class="tag">Emergency Lighting (F6/F8)</span>
+                </div>
+                <p>This project involved evaluating and redesigning the lighting systems of two existing office buildings for a fictional client, Alpha Design Limited, in collaboration with Legrand New Zealand. The existing fluorescent installation was assessed against AS/NZS 1680, then replaced with an LED design across both buildings and a new covered carpark that met the illuminance, uniformity, and glare criteria set out in the assignment brief, along with emergency lighting to NZBC clauses F6 and F8.<br><br>
+                    The project was completed as part of ELECTENG 310 with a five-person team (Team 14). The redesign cut total connected load by 74% and achieved a payback period of around 6 years, well within the client's 10-year requirement.</p>
+                    <div class="main-image-container">
+    <figure class="main-image-figure">
+        <img class="main-image" src="../assets/Images/BuildingB-ReflectedCeilingPlan.png" alt="Building B First Floor Reflected Ceiling Plan">
+        <figcaption>Building B First Floor - Reflected Ceiling Plan</figcaption>
+    </figure>
+    <figure class="main-image-figure">
+        <img class="main-image" src="../assets/Images/Office205.png" alt="Office 205 Alcove - Cold Spot Resolved with Baris 40 LED">
+        <figcaption>Office 205 Alcove - Cold Spot Resolved with Baris 40 LED</figcaption>
+    </figure>
+</div>
+                <hr>
+
+                <h2>Project Overview</h2>
+                <p>The existing fluorescent lighting across both buildings had a total connected load of 25,428 W, a power density of 21.68 W/m² (well above the 7-9 W/m² recommended for offices), and was found to fail uniformity and glare requirements in multiple corridors and CAD rooms. 
+                    The brief called for an LED redesign assessed against AS/NZS 1680, emergency lighting to NZBC F6/F8, and a payback period under 10 years, modelled entirely in DIALux Evo. To keep the assignment scope manageable, the brief specified a simplified subset of the standard's criteria: Working plane height was fixed at 0.7m for all task areas (rather than the 0.85m specified for bench-height tasks), and rooms requiring high-focus tasks such as CAD rooms and offices were assessed against the 0.5 minimum uniformity tier rather than the stricter 0.7 minimum AS/NZS 1680 specifies for that task type. Circulation spaces still used the correct 0.3 minimum. The design below meets those specified criteria. It wasn't checked against every clause of AS/NZS 1680.</p>
+                <p>Ground floor of Building A was redesigned using ETAP luminaires, the first floor using Lena Lighting fittings, with a mix of recessed and surface-mounted fixtures depending on ceiling type and IP66 fittings on exposed balconies. Building B's ground floor also used Lena Lighting fittings across its circulation, office, and wet-area spaces. A new carpark lighting system was designed from scratch, including tiered entrance illuminance zones with DALI day/night dimming control.</p>
+                <hr>
+
+                <h2>My Contributions: Building B First Floor</h2>
+                <p>I was responsible for the lighting redesign of Building B's first floor, which presented a distinct set of constraints compared to the ground floors below: a 3.3m exposed concrete slab ceiling ruled out recessed fittings entirely, so every luminaire had to be surface mounted or suspended.</p>
+                <h3>Fitting Selection and Suspension Strategy</h3>
+                <p>Circulation spaces used the Baris 40 LED N VD, a fitting purpose-built for traffic zones under AS/NZS 1680.2.1, with the stair unit positioned toward the upper corner to reduce glare for ascending occupants and improve tread contrast. The director's room, offices, meeting rooms, CAD room, and conference room used the Terra 2 LED ZW multiwatt fitting, suspended 500mm below the concrete slab to an effective height of 2.8m. The 500mm drop was a deliberate choice to reduce the "cave effect" from the exposed ceiling and improve ceiling luminance and visual comfort. The multiwatt feature let me tune output per room size without changing fitting type, keeping the luminaire schedule consistent across the floor.</p>
+                <h3>Resolving Uniformity and Glare Failures</h3>
+                <p>Several rooms needed targeted fixes beyond the standard layout:</p>
+                <ul>
+                    <li><strong>Meeting room 208</strong> required two additional Terra 2 LED Long Z fittings along the presentation wall to bring uniformity and wall illuminance up to AS/NZS 1680.2.2.</li>
+                    <li><strong>Office 205's</strong> L-shaped layout created cold spots in an alcove. I resolved this by adding a Baris 40 LED UGR Plus N with a 70D wide beam angle in the bend, chosen over the narrower 60D option to maximise spread across the confined space.</li>
+                    <li><strong>Conference room 213</strong> failed the Uo ≥ 0.5 uniformity requirement, so I added two supplementary Baris 40 VD surface-mounted fittings; surface mounting these also had the useful side effect of reducing UGR from 20 to 18.7.</li>
+                </ul>
+                <h3>Wet Areas and Breakout Spaces</h3>
+                <p>The kitchen and toilets used the Compact LED EVO P ZK for its IP44 moisture rating. I specified the kitchen in the 830 (3000K) variant for a warmer, more relaxed breakout atmosphere and surface mounted it for ease of cleaning, while the toilets used the 840 (4000K) variant for a cleaner, more clinical appearance.</p>
+                <hr>
+
+                <h2>Design Verification</h2>
+                <p>Every room on the floor was checked in DIALux Evo against the brief's assessment criteria from AS/NZS 1680.2.2: average maintained illuminance, overall room uniformity, and UGR. The final results across the floor:</p>
+                <ul>
+                    <li>All 15 spaces met the specified illuminance and uniformity targets, including the two rooms requiring supplementary fittings</li>
+                    <li>UGR held at or below 19 across every task room, ranging from 16.3 (office 212) to 18.7 (office 205 and conference room 213)</li>
+                    <li>Maintenance factors calculated per room using L70B50 lifespan data and AS/NZS 1680.4</li>
+                </ul>
+                <p>As noted above, these results reflect the brief's specified scope, not a full audit against every AS/NZS 1680 clause.</p>
+                <hr>
+
+                <h2>Results</h2>
+                <p>Across both buildings, the redesign reduced total connected load from 25,428 W to 6,593.9 W, cutting annual CO₂ emissions from 20.98 tonnes to 5.44 tonnes, with a capital cost of $83,400 paid back in approximately 6 years.</p>
+                <hr>
+
+                <h2>Additional Resources</h2>
+                <p>For the full technical design process, compliance tables, calculations, and reflected ceiling plans, the complete project report is available below.</p>
+                <a class="project-links" href="../assets/Files/EE310 Project 2 Team 14 Report 2026.pdf" class="report-link" target="_blank">View Full Report</a>
+            </section>
+        </header>
+    </main>
+    <footer>
+        <ul class="contact-info">
+                <li class="contact-box"><a href="https://nz.linkedin.com/in/elia-stolk-05a437362" class="contact-link"><svg class="contact-icon" viewBox="1.786 -104.027 287.865 287.865" xmlns="http://www.w3.org/2000/svg"><path d="M213.882 7.245c0-3.015 2.508-5.462 5.6-5.462h64.568c3.093 0 5.6 2.447 5.6 5.462V72.57c0 3.016-2.507 5.461-5.6 5.461h-64.568c-3.092 0-5.6-2.445-5.6-5.46V7.244z" fill="#069"/><path d="M1.785 65.652h31.62V55.27H13.23V15.665H1.785v49.987zM49.414 65.652v-34.43H37.97v34.43h11.444zm-5.721-39.13c3.99 0 6.474-2.644 6.474-5.95-.074-3.378-2.484-5.947-6.398-5.947-3.915 0-6.475 2.57-6.475 5.947 0 3.306 2.484 5.95 6.324 5.95h.075zM54.727 65.652h11.444V46.424c0-1.029.074-2.058.377-2.791.826-2.056 2.709-4.186 5.871-4.186 4.142 0 5.799 3.158 5.799 7.784v18.42H89.66V45.91c0-10.576-5.646-15.497-13.176-15.497-6.173 0-8.884 3.451-10.39 5.802h.077v-4.993H54.727c.151 3.231 0 34.43 0 34.43zM105.805 15.665H94.361v49.987h11.444V54.489l2.86-3.601 8.96 14.764h14.078l-15.056-21.373 13.174-14.54h-13.776s-9.411 13.008-10.24 14.552V15.665z"/><path d="M162.306 51.29c.151-.884.377-2.58.377-4.498 0-8.9-4.518-17.936-16.413-17.936-12.724 0-18.597 10.063-18.597 19.19 0 11.288 7.153 18.337 19.65 18.337 4.97 0 9.561-.732 13.327-2.275l-1.506-7.558c-3.088 1.024-6.25 1.537-10.164 1.537-5.345 0-10.012-2.195-10.389-6.871l23.715.072v.002zm-23.79-7.742c.301-2.938 2.26-7.273 7.153-7.273 5.194 0 6.4 4.628 6.4 7.273h-13.552zM190.93 15.665v17.304h-.151c-1.657-2.422-5.12-4.038-9.71-4.038-8.81 0-16.564 7.05-16.49 19.094 0 11.164 7.003 18.435 15.735 18.435 4.744 0 9.26-2.058 11.52-6.024h.225l.453 5.216h10.163c-.15-2.424-.302-6.61-.302-10.723V15.664h-11.444zm0 34.05c0 .88-.075 1.763-.227 2.495-.675 3.16-3.386 5.361-6.699 5.361-4.742 0-7.83-3.818-7.83-9.84 0-5.654 2.637-10.208 7.906-10.208 3.538 0 6.022 2.423 6.7 5.433.15.663.15 1.398.15 2.058v4.7z"/><path d="M236.85 65.61V31.18h-11.444v34.43h11.445zm-5.72-39.13c3.99 0 6.474-2.644 6.474-5.948-.075-3.379-2.484-5.949-6.398-5.949-3.917 0-6.475 2.57-6.475 5.949 0 3.304 2.483 5.948 6.324 5.948h.074zM243.184 65.61h11.443V46.385c0-1.028.075-2.058.377-2.792.827-2.057 2.71-4.186 5.872-4.186 4.14 0 5.797 3.157 5.797 7.786V65.61h11.443V45.869c0-10.575-5.645-15.496-13.174-15.496-6.173 0-8.884 3.45-10.39 5.8h.076v-4.992h-11.443c.149 3.23-.001 34.43-.001 34.43z" fill="#ffffff"/></svg></a></li>
+                <li class="contact-box"><a href="https://github.com/EliaStolk" class="contact-link"><svg class="contact-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+            </ul>
+            <p id="copyright">Copyright © 2026 Elia Stolk</p>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>

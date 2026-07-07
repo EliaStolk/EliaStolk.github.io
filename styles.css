@@ -428,7 +428,7 @@ li {
 }
 
 /* phone */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
 
     .main-image-container {
     flex-direction: column;
